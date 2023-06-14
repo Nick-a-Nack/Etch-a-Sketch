@@ -1,0 +1,23 @@
+.board{
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+}
+
+.row{
+    display: flex;
+    background-color: teal;
+}
+
+.item{
+    display: block;
+    background-color:floralwhite;
+    border: 2px solid black;
+    height: 2rem;
+    width: 2rem;
+}
+
+.visited{
+    background-color: red;
+}
