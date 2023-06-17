@@ -63,6 +63,9 @@ startBoard.addEventListener('click', () => {
     addMouseoverListener();
 });
 
+/*
+createBoard creates an NxN board of square boxes on the page with N = 16 being the default
+*/
 function createBoard(count = 16){
     const board = document.querySelector('.board');
 
