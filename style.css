@@ -1,3 +1,13 @@
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+button{
+    display: block;
+    align-self: center;
+}
 .board{
     display: flex;
     flex-direction:column;
@@ -7,15 +17,17 @@
 
 .row{
     display: flex;
-    background-color: teal;
+    width: 40%;
+    justify-content: center;
+    align-items: center;
 }
 
 .item{
-    display: block;
+    display: flex;
     background-color:floralwhite;
-    border: 2px solid black;
-    height: 2rem;
-    width: 2rem;
+    border: 1px solid black;
+    width: 50%;
+    aspect-ratio: 1/1;
 }
 
 .visited{
