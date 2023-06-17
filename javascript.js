@@ -1,6 +1,6 @@
 
 /*
-This code makes each box you mouse over a red background by giving it the visited class
+This code creates a 16x16 board on page load and adds event listeners to each box on the board 
 */
 document.addEventListener('DOMContentLoaded', () => {
     createBoard();
