@@ -2,23 +2,41 @@
 /*
 This code makes each box you mouse over a red background by giving it the visited class
 */
+document.addEventListener('DOMContentLoaded', () => {
+    createBoard();
+    addMouseoverListener();
+});
 
+/*
+This code adds a random color to each box on mouseover
+*/
 function addMouseoverListener(){
     const square = document.querySelectorAll('.item');
 
     square.forEach((square) => {
     square.addEventListener('mouseover', () => {
-        square.classList.add('visited');
+        
+        square.setAttribute('style', `background-color: rgb(${random256()}, ${random256()}, ${random256()})`);
     });
 });
 }
 
+/*
+Helper function for ^
+*/
+
+function random256(){
+    return Math.floor(Math.random() * 256);
+}
+
+/*
+startBoard is the initialize board button at the top of the window
+It asks how big the user wants the board to be from 0 to 100 squares
+using input validation.
+eventlisteners are attached to new board after creation.
+*/
 const startBoard = document.querySelector('#init');
 
-document.addEventListener('DOMContentLoaded', () => {
-    createBoard();
-    addMouseoverListener();
-});
 startBoard.addEventListener('click', () => {
     let userChoice = prompt("How big would you like the board to be? \n (Pick between 1 and 100)");
     
@@ -26,6 +44,9 @@ startBoard.addEventListener('click', () => {
         return;
     }
     while(isNaN(userChoice)){
+        if (userChoice == null){
+            return;
+        }
         alert(`${userChoice} is not a number, try again!`);
         userChoice = prompt("How big would you like the board to be?  \n (Pick between 1 and 100)");
     }
@@ -63,4 +84,12 @@ function clearBoard(){
     while(board.firstChild){
         board.removeChild(board.firstChild);
     }     
+}
+
+class Square{
+    constructor(r,g,b){
+        this.r = r;
+        this.g = g;
+        this.b = b;
+    }
 }
